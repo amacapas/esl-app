@@ -24,6 +24,9 @@ const useStyles = makeStyles(theme => ({
       "& ol": {
         justifyContent: 'flex-end',
       },
+      "& ol > li": {
+        fontSize: '14px',
+      },
       margin: '5px 35px',
     }
 }));
@@ -47,7 +50,7 @@ const Header = () => {
             <Container maxWidth="lg" component="main">
               <Toolbar className={classes.toolbar}>
                 <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-                  <Link variant="link" color="textPrimary" href="#" className={classes.link}>
+                  <Link variant="h5" color="textPrimary" href="#" className={classes.link}>
                     ESL Lab
                   </Link>
                 </Typography>
