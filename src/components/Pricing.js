@@ -75,7 +75,7 @@ const Pricing = () => {
 
     return (
         <React.Fragment>
-            <Container maxWidth="sm" component="main" className={classes.heroContent}>
+          <Container maxWidth="sm" component="main" className={classes.heroContent}>
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                 Pricing
             </Typography>
@@ -83,9 +83,9 @@ const Pricing = () => {
                 Quickly build an effective pricing table for your potential customers with this layout.
                 It&apos;s built with default Material-UI components with little customization.
             </Typography>
-            </Container>
+          </Container>
 
-            <Container maxWidth="md" component="main">
+          <Container maxWidth="md" component="main">
             <Grid container spacing={5} alignItems="flex-end">
                 {tiers.map(tier => (
                 // Enterprise card is full width at sm breakpoint
@@ -125,7 +125,7 @@ const Pricing = () => {
                 </Grid>
                 ))}
             </Grid>
-            </Container>
+          </Container>
         </React.Fragment>
     )
 }
