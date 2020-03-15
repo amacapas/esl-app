@@ -4,8 +4,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Container from '@material-ui/core/Container';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-// import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -15,11 +13,12 @@ const useStyles = makeStyles(theme => ({
     toolbar: {
       flexWrap: 'wrap',
     },
-    toolbarTitle: {
-      flexGrow: 1,
-    },
-    link: {
-      margin: theme.spacing(1, 1.5),
+    menu: {
+      "& > a": {
+        display: 'inline-block',
+        margin: theme.spacing(1, 1.5),
+        outlineStyle: 'none'
+      }
     },
     breadcrumbs: {
       "& ol": {
@@ -31,7 +30,14 @@ const useStyles = makeStyles(theme => ({
       margin: '5px 35px',
     },
     logo: {
-      width: '180px'
+      display: 'inline-block',
+      flexGrow: 1,
+      margin: '10px 0',
+      outlineStyle: 'none',
+
+      "& > img": {
+        width: '195px'
+      }
     }
 }));
 
@@ -45,7 +51,7 @@ const Header = () => {
               <Link to="#">
                 {(true)?'TH':'EN'} 
               </Link>
-              <Link to="#">
+              <Link to="/login">
                 Sign In
               </Link>
             </Breadcrumbs>
@@ -53,24 +59,14 @@ const Header = () => {
           <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
             <Container maxWidth="lg" component="main">
               <Toolbar className={classes.toolbar}>
-                <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-                  <Link variant="h5" color="textPrimary" to="/" className={classes.link}>
-                    <img src="/logo.png" alt="Language Lab Pro" className={classes.logo} />
-                  </Link>
-                </Typography>
-                <nav>
-                  <Link variant="button" color="textPrimary" to="/" className={classes.link}>
-                    Home
-                  </Link>
-                  <Link variant="button" color="textPrimary" to="how-it-works" className={classes.link}>
-                    How it Works
-                  </Link>
-                  <Link variant="button" color="textPrimary" to="about-us" className={classes.link}>
-                    About Us
-                  </Link>
-                  <Link variant="button" color="textPrimary" to="contact-us" className={classes.link}>
-                    Contact Us
-                  </Link>
+                <Link to="/" className={classes.logo}>
+                  <img src="/logo.png" alt="Language Lab Pro" />
+                </Link>
+                <nav className={classes.menu}>
+                  <Link to="/">Home</Link>
+                  <Link to="/how-it-works">How it Works</Link>
+                  <Link to="/about-us">About Us</Link>
+                  <Link to="/contact-us">Contact Us</Link>
                 </nav>
               </Toolbar>
             </Container>
