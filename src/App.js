@@ -1,20 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Header from './components/Header';
-import Banner from './components/Banner';
-import Pricing from './components/Pricing';
-import Footer from './components/Footer';
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/About'
+import HowItWorks from './components/Works'
 
 const App = () => {
   return (
-    <React.Fragment>
+    <Router>
       <CssBaseline />
-      <Header />
-      <Banner />
-      <Pricing />
-      <Footer />
-    </React.Fragment>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about-us" component={About} />
+        <Route exact path="/contact-us" component={Contact} />
+        <Route exact path="/how-it-works" component={HowItWorks} />
+      </Switch>
+    </Router>
   );
 }
 

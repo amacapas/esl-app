@@ -85,7 +85,7 @@ const Pricing = () => {
             </Typography>
           </Container>
 
-          <Container maxWidth="md" component="main">
+          <Container maxWidth="lg" component="main">
             <Grid container spacing={5} alignItems="flex-end">
                 {tiers.map(tier => (
                 // Enterprise card is full width at sm breakpoint
